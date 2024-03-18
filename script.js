@@ -30,6 +30,7 @@ zapalki.forEach(element => {
         console.log(element.id);
         if(parseInt(iloscZapalek) >= parseInt(element.id))
         {
+            document.querySelector("#alert").innerHTML = "";
             iloscZapalek -= element.id;
             if(iloscZapalek != 0)
             {
@@ -47,16 +48,19 @@ zapalki.forEach(element => {
             }
             else
             {
-                div.innerHTML = "<h2>Ilośc zapałek do wzięcia: </h2><h1>" + iloscZapalek + "</h1>";
                 if(gracz)
                 {
                     div.innerHTML = "<h1>Wygrał gracz drugi</h1>"
                 }
                 else
                 {
-                    div.innerHTML += "<h1>Wygrał gracz pierwszy</h1>";
+                    div.innerHTML = "<h1>Wygrał gracz pierwszy</h1>";
                 }
             }
+        }
+        else
+        {
+            document.querySelector("#alert").innerHTML = "<h3>Za mało zapałek aby wykonać ten ruch!<h3>";
         }
     })
 });
