@@ -60,7 +60,10 @@ zapalki.forEach(element => {
         }
         else
         {
-            document.querySelector("#alert").innerHTML = "<h3>Za mało zapałek aby wykonać ten ruch!<h3>";
+            if(iloscZapalek != 0)
+            {
+                document.querySelector("#alert").innerHTML = "<h3>Za mało zapałek aby wykonać ten ruch!<h3>";
+            }
         }
     })
 });
